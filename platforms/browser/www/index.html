@@ -86,7 +86,7 @@
 									<a href="classes.html" class="fh5co-sub-ddown">Ligue1</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('FL1')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('FL1')">Résultats</a></li>
 										</ul>
 								</li>
 
@@ -95,7 +95,7 @@
 									<a href="classes.html" class="fh5co-sub-ddown">Bundesliga</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('BL1')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('BL1')">Résultats</a></li>
 										</ul>
 								</li>
 
@@ -104,7 +104,7 @@
 									<a href="#" class="fh5co-sub-ddown">Serie A</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('SA')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('SA')" >Résultats</a></li>
 										</ul>
 								</li>
 
@@ -122,7 +122,7 @@
 									<a href="#" class="fh5co-sub-ddown">La ligua</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('PD')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('PD')" >Résultats</a></li>
 										</ul>
 								</li>
 
@@ -154,11 +154,9 @@
 		</div>
 		<!-- end:fh5co-hero -->
 
-<<<<<<< HEAD
 
-=======
 		<!-- fh5co-blog-section -->
->>>>>>> 4668606a81d8d7fd678725d9bdd1289b89c32abd
+
 		<footer>
 			<div id="footer">
 				<div class="container">
@@ -372,6 +370,8 @@
 							if (this.readyState === 4) {
 									//Variables
 										let nbMatchs = 10;
+										console.log(requete.response);
+										console.log(requete.response.matches[1].homeTeam.name);
 
 									//Creation de la table
 											let table = document.createElement("table");
@@ -420,14 +420,16 @@
 													let cellule3 = document.createElement("td");
 													let cellule4 = document.createElement("td");
 
-												//Création du texte de chaque cellule
-													let txt1 = document.createTextNode(requete.response.matches[i].hometeam.name);
+													console.log(requete.response.matches[i].homeTeam.name);
+
+												 //Création du texte de chaque cellule
+													let txt1 = document.createTextNode(requete.response.matches[i].homeTeam.name);
 													let txt2 = document.createTextNode("0");
 													let txt3 = document.createTextNode("0");
-													let txt4 = document.createTextNode(requete.response.matches[i].awayteam.name);
+													let txt4 = document.createTextNode(requete.response.matches[i].awayTeam.name);
 
 												//Création de l'image du club
-													let image1 = document.createElement('img');
+												/*	let image1 = document.createElement('img');
 													image1.setAttribute("src",requete.response.standings[0].table[i].team.crestUrl);
 													image1.setAttribute("height","25");
 													image1.setAttribute("width","18"); */
@@ -451,7 +453,7 @@
 													//parent.appendChild(image1);
 
 												//Vérifier que chaque élément est bien récupéré
-													console.log(requete.response.matches[i].hometeam.name);
+													console.log(requete.response.matches[i].homeTeam.name);
 													/*console.log(requete.response.standings[0].table[i].team.name);
 													console.log(requete.response.standings[0].table[i].team.crestUrl);
 													console.log(requete.response.standings[0].table[i].playedGames);
