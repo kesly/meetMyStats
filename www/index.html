@@ -86,7 +86,7 @@
 									<a href="classes.html" class="fh5co-sub-ddown">Ligue1</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('FL1')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('FL1')">Résultats</a></li>
 										</ul>
 								</li>
 
@@ -95,7 +95,7 @@
 									<a href="classes.html" class="fh5co-sub-ddown">Bundesliga</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('BL1')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('BL1')">Résultats</a></li>
 										</ul>
 								</li>
 
@@ -104,7 +104,7 @@
 									<a href="#" class="fh5co-sub-ddown">Serie A</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('SA')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('SA')" >Résultats</a></li>
 										</ul>
 								</li>
 
@@ -113,7 +113,7 @@
 									<a href="#" class="fh5co-sub-ddown">Premier League</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('PL')">Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('PL')">Résultats</a></li>
 										</ul>
 								</li>
 
@@ -122,7 +122,7 @@
 									<a href="#" class="fh5co-sub-ddown">La ligua</a>
 										 <ul class="fh5co-sub-menu">
 												 	<li><a href="#" onclick="afficherClassement('PD')" >Classements</a></li>
-													<li><a href="#">Résultats</a></li>
+													<li><a href="#" onclick="afficherResultat('PD')" >Résultats</a></li>
 										</ul>
 								</li>
 
@@ -154,7 +154,9 @@
 		</div>
 		<!-- end:fh5co-hero -->
 
+
 		<!-- fh5co-blog-section -->
+
 		<footer>
 			<div id="footer">
 				<div class="container">
@@ -344,6 +346,137 @@
 						requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
 						//requete.setRequestHeader("X-Authenticated-Client", "anonymous");
 						/*requete.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");*/
+						requete.responseType = 'json';
+						requete.send();
+
+		}
+
+		function afficherResultat(nomLigue){
+			//Variables
+				let parent = document.getElementById('idAffichage');
+				let taille = parent.childNodes.length;
+
+			//Traitements
+				//Supprimer les enfants
+					for (let i=0 ; i<taille ; i++){
+						parent.removeChild(parent.childNodes[0]);
+					}
+
+				//Creer la requete
+						let requete = new XMLHttpRequest();
+
+				// créer le champs permettant de choisir la journée
+				let jouneeInput=document.createElement("input");
+				let journeeSuivant= document.createElement("button");
+				let journeePrecedent=document.createElement("button");
+
+				//Effectuer le callback et afficher le classement
+						requete.addEventListener("readystatechange", function () {
+							if (this.readyState === 4) {
+									//Variables
+										let nbMatchs = 10;
+										console.log(requete.response);
+										console.log(requete.response.matches[1].homeTeam.name);
+
+									//Creation de la table
+											let table = document.createElement("table");
+
+											//Création de la 1er ligne du tableau
+												let premTabLigne = document.createElement("tr");
+
+												//Création des 1er céllules
+													let premCellule1 = document.createElement("td");
+													let premCellule2 = document.createElement("td");
+													let premCellule3 = document.createElement("td");
+													let premCellule4 = document.createElement("td");
+
+												//Création du texte de chaqu'une des 1er cellules
+													let premTxt1 = document.createTextNode("Equipe a domicile");
+													let premTxt2 = document.createTextNode("but");
+													let premTxt3 = document.createTextNode("but");
+													let premTxt4 = document.createTextNode("Equipe a l'exterieur");
+
+
+
+												//Ajout du texte à chaque cellule
+													premCellule1.appendChild(premTxt1);
+													premCellule2.appendChild(premTxt2);
+													premCellule3.appendChild(premTxt3);
+													premCellule4.appendChild(premTxt4);
+
+												//Ajouter les 1ers cellules à la 1er ligne
+													premTabLigne.appendChild(premCellule1);
+													premTabLigne.appendChild(premCellule2);
+													premTabLigne.appendChild(premCellule3);
+													premTabLigne.appendChild(premCellule4);
+
+												//Ajouter au tableau
+													table.appendChild(premTabLigne);
+
+
+											//BOUCLE PERMETTANT L'AFFICHAGE DU RESTE DU CLASSEMENT
+											for (let i=0 ; i < nbMatchs ; i++){
+											//Création de la ligne du tableau
+												let tabLigne = document.createElement("tr");
+
+												//Création des céllules
+													let cellule1 = document.createElement("td");
+													let cellule2 = document.createElement("td");
+													let cellule3 = document.createElement("td");
+													let cellule4 = document.createElement("td");
+
+													console.log(requete.response.matches[i].homeTeam.name);
+
+												 //Création du texte de chaque cellule
+													let txt1 = document.createTextNode(requete.response.matches[i].homeTeam.name);
+													let txt2 = document.createTextNode("0");
+													let txt3 = document.createTextNode("0");
+													let txt4 = document.createTextNode(requete.response.matches[i].awayTeam.name);
+
+												//Création de l'image du club
+												/*	let image1 = document.createElement('img');
+													image1.setAttribute("src",requete.response.standings[0].table[i].team.crestUrl);
+													image1.setAttribute("height","25");
+													image1.setAttribute("width","18"); */
+
+												//Définir le texte (et l'image) de chaque cellule
+													cellule1.appendChild(txt1);
+													//cellule2.appendChild(image1);
+													cellule2.appendChild(txt2);
+													cellule3.appendChild(txt3);
+													cellule4.appendChild(txt4);
+
+												//Ajouter les cellules à la ligne
+													tabLigne.appendChild(cellule1);
+													tabLigne.appendChild(cellule2);
+													tabLigne.appendChild(cellule3);
+													tabLigne.appendChild(cellule4);
+
+												//Ajouter la ligne au tableau
+													table.appendChild(tabLigne);
+
+													//parent.appendChild(image1);
+
+												//Vérifier que chaque élément est bien récupéré
+													console.log(requete.response.matches[i].homeTeam.name);
+													/*console.log(requete.response.standings[0].table[i].team.name);
+													console.log(requete.response.standings[0].table[i].team.crestUrl);
+													console.log(requete.response.standings[0].table[i].playedGames);
+													console.log(requete.response.standings[0].table[i].goalsFor + ":" + requete.response.standings[0].table[i].goalsAgainst);
+													console.log(requete.response.standings[0].table[i].points); */
+											}
+
+										//Ajouter la table dans la page
+											parent.appendChild(table);
+							}
+						});
+
+				//Initialiser l'url ainsi que l'envoie de la demande de donnée à l'API
+						let url = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches?matchday=30";
+						requete.open("GET", url);
+						requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+						//requete.setRequestHeader("X-Authenticated-Client", "anonymous");
+						//requete.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");
 						requete.responseType = 'json';
 						requete.send();
 
