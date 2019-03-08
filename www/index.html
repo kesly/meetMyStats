@@ -365,6 +365,11 @@
 				//Creer la requete
 						let requete = new XMLHttpRequest();
 
+				// créer le champs permettant de choisir la journée
+				let jouneeInput=document.createElement("input");
+				let journeeSuivant= document.createElement("button");
+				let journeePrecedent=document.createElement("button");
+
 				//Effectuer le callback et afficher le classement
 						requete.addEventListener("readystatechange", function () {
 							if (this.readyState === 4) {
