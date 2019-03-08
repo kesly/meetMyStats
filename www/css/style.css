@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -77,17 +77,16 @@ figure {
 .fh5co-cover,
 .fh5co-hero {
   position: relative;
-  height: 800px;
-}
+  height: auto;}
 @media screen and (max-width: 768px) {
   .fh5co-cover,
   .fh5co-hero {
-    height: 700px;
+    height: auto;
   }
 }
 .fh5co-cover.fh5co-hero-2,
 .fh5co-hero.fh5co-hero-2 {
-  height: 600px;
+  height: auto;
 }
 .fh5co-cover.fh5co-hero-2 .fh5co-overlay,
 .fh5co-hero.fh5co-hero-2 .fh5co-overlay {
