@@ -1,498 +1,499 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<!--meta http-equiv="X-UA-Compatible" content="IE=edge"-->
-	<title>Fitness &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
-	<!--meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" /-->
-
-  <!--
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
-	<!--meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" /-->
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
-
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
-
-	<link rel="stylesheet" href="css/style.css">
-
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body style="background-color: black;">
-		<div id="fh5co-page">
-		<div id="fh5co-header">
-			<header id="fh5co-header-section">
-				<div class="container">
-					<div class="nav-header">
-						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<h1 id="fh5co-logo"><a href="index.html"><i><span>MeetMy</span>Stats</a></i></h1>
-
-
-						<!-- START #fh5co-menu-wrap -->
-						<nav id="fh5co-menu-wrap" role="navigation" >
-							<ul class="sf-menu" id="fh5co-primary-menu">
-
-								<li class="active">
-									<a href="index.html"> Home </a>
-								</li>
-
-								<!-- LIGUE1 -->
-								<li>
-									<a href="classes.html" class="fh5co-sub-ddown">Ligue1</a>
-										 <ul class="fh5co-sub-menu">
-												 	<li><a href="#" onclick="afficherClassement('FL1')" >Classements</a></li>
-													<li><a href="#" onclick="afficherResultat('FL1')">Résultats</a></li>
-										</ul>
-								</li>
-
-								<!--BUNDESLIGA -->
-								<li>
-									<a href="classes.html" class="fh5co-sub-ddown">Bundesliga</a>
-										 <ul class="fh5co-sub-menu">
-												 	<li><a href="#" onclick="afficherClassement('BL1')" >Classements</a></li>
-													<li><a href="#" onclick="afficherResultat('BL1')">Résultats</a></li>
-										</ul>
-								</li>
-
-								<!-- SERIE A -->
-								<li>
-									<a href="#" class="fh5co-sub-ddown">Serie A</a>
-										 <ul class="fh5co-sub-menu">
-												 	<li><a href="#" onclick="afficherClassement('SA')" >Classements</a></li>
-													<li><a href="#" onclick="afficherResultat('SA')" >Résultats</a></li>
-										</ul>
-								</li>
-
-								<!-- Premier League -->
-								<li>
-									<a href="#" class="fh5co-sub-ddown">Premier League</a>
-										 <ul class="fh5co-sub-menu">
-												 	<li><a href="#" onclick="afficherClassement('PL')">Classements</a></li>
-													<li><a href="#" onclick="afficherResultat('PL')">Résultats</a></li>
-										</ul>
-								</li>
-
-								<!-- La Ligua -->
-								<li>
-									<a href="#" class="fh5co-sub-ddown">La ligua</a>
-										 <ul class="fh5co-sub-menu">
-												 	<li><a href="#" onclick="afficherClassement('PD')" >Classements</a></li>
-													<li><a href="#" onclick="afficherResultat('PD')" >Résultats</a></li>
-										</ul>
-								</li>
-
-							</ul>
-						</nav> <!-- END NAV -->
-
-
-					</div>
-				</div>
-			</header>
-		</div> <!-- end:fh5co-header -->
-
-
-		<div class="fh5co-hero" >
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover" >
-				<div class="desc animate-box">
-					<div class="container">
-						<div class="row">
-							<div id="idAffichage" class="col-md-12">
-								<h2>Classement, Resultat &amp; <br> Actualité <b>Sportive</b></h2>
-								<p><span>Created with <i class="icon-heart3"></i> by Boilley, Gassant and Lemoine at <a href="http://iutbayonne.univ-pau.fr" class="fh5co-site-name">IUT Bayonne</a></span></p>
-								<span><a class="btn btn-primary" href="#">Start Your Journey</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end:fh5co-hero -->
-
-
-		<!-- fh5co-blog-section -->
-
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-4 animate-box">
-							<h3 class="section-title">About Us</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
-						</div>
-
-						<div class="col-md-4 animate-box">
-							<h3 class="section-title">Our Address</h3>
-							<ul class="contact-info">
-								<li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-								<li><i class="icon-phone"></i>+ 1235 2355 98</li>
-								<li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
-								<li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
-							</ul>
-						</div>
-						<div class="col-md-4 animate-box">
-							<h3 class="section-title">Drop us a line</h3>
-							<form class="contact-form">
-								<div class="form-group">
-									<label for="name" class="sr-only">Name</label>
-									<input type="name" class="form-control" id="name" placeholder="Name">
-								</div>
-								<div class="form-group">
-									<label for="email" class="sr-only">Email</label>
-									<input type="email" class="form-control" id="email" placeholder="Email">
-								</div>
-								<div class="form-group">
-									<label for="message" class="sr-only">Message</label>
-									<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
-								</div>
-								<div class="form-group">
-									<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="row copy-right">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="#"><i class="icon-twitter2"></i></a>
-								<a href="#"><i class="icon-facebook2"></i></a>
-								<a href="#"><i class="icon-instagram"></i></a>
-								<a href="#"><i class="icon-dribbble2"></i></a>
-								<a href="#"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2016 Free Html5 <a href="#">Fitness</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-
-	</div>
-	<!-- END fh5co-page -->
-
-	<!-- END fh5co-wrapper -->
-
-	<!-- jQuery -->
-
-
-	<script>
-		function afficherClassement(nomLigue){
-			//Variables
-				let parent = document.getElementById('idAffichage');
-				let taille = parent.childNodes.length;
-
-			//Traitements
-				//Supprimer les enfants
-					for (let i=0 ; i<taille ; i++){
-						parent.removeChild(parent.childNodes[0]);
-					}
-
-				//Creer la requete
-						let requete = new XMLHttpRequest();
-
-				//Effectuer le callback et afficher le classement
-						requete.addEventListener("readystatechange", function () {
-						  if (this.readyState === 4) {
-									//Variables
-										let nbClubs = requete.response.standings[0].table.length;
-
-									//Creation de la table
-											let table = document.createElement("table");
-
-											//Création de la 1er ligne du tableau
-												let premTabLigne = document.createElement("tr");
-
-												//Création des 1er céllules
-													let premCellule1 = document.createElement("td");
-													let premCellule2 = document.createElement("td");
-													let premCellule3 = document.createElement("td");
-													let premCellule4 = document.createElement("td");
-													let premCellule5 = document.createElement("td");
-
-												//Création du texte de chaqu'une des 1er cellules
-													let premTxt1 = document.createTextNode("Pos");
-													let premTxt2 = document.createTextNode("Nom");
-													let premTxt3 = document.createTextNode("MJ");
-													let premTxt4 = document.createTextNode("BM:BE");
-													let premTxt5 = document.createTextNode("Pts");
-
-												//Ajout du texte à chaque cellule
-													premCellule1.appendChild(premTxt1);
-													premCellule2.appendChild(premTxt2);
-													premCellule3.appendChild(premTxt3);
-													premCellule4.appendChild(premTxt4);
-													premCellule5.appendChild(premTxt5);
-
-												//Ajouter les 1ers cellules à la 1er ligne
-													premTabLigne.appendChild(premCellule1);
-													premTabLigne.appendChild(premCellule2);
-													premTabLigne.appendChild(premCellule3);
-													premTabLigne.appendChild(premCellule4);
-													premTabLigne.appendChild(premCellule5);
-
- 												//Ajouter au tableau
-													table.appendChild(premTabLigne);
-
-
-											//BOUCLE PERMETTANT L'AFFICHAGE DU RESTE DU CLASSEMENT
-											for (let i=0 ; i < nbClubs ; i++){
-											//Création de la ligne du tableau
-												let tabLigne = document.createElement("tr");
-
-												//Création des céllules
-													let cellule1 = document.createElement("td");
-													let cellule2 = document.createElement("td");
-													let cellule3 = document.createElement("td");
-													let cellule4 = document.createElement("td");
-													let cellule5 = document.createElement("td");
-
-												//Création du texte de chaque cellule
-													let txt1 = document.createTextNode(requete.response.standings[0].table[i].position);
-													let txt2 = document.createTextNode(requete.response.standings[0].table[i].team.name);
-													let txt3 = document.createTextNode(requete.response.standings[0].table[i].playedGames);
-													let txt4 = document.createTextNode(requete.response.standings[0].table[i].goalsFor + ":" + requete.response.standings[0].table[i].goalsAgainst);
-													let txt5 = document.createTextNode(requete.response.standings[0].table[i].points);
-
-												//Création de l'image du club
-													let image1 = document.createElement('img');
-													image1.setAttribute("src",requete.response.standings[0].table[i].team.crestUrl);
-													image1.setAttribute("height","25");
-													image1.setAttribute("width","18");
-
-												//Définir le texte (et l'image) de chaque cellule
-													cellule1.appendChild(txt1);
-													cellule2.appendChild(image1);
-													cellule2.appendChild(txt2);
-													cellule3.appendChild(txt3);
-													cellule4.appendChild(txt4);
-													cellule5.appendChild(txt5);
-
-												//Ajouter les cellules à la ligne
-													tabLigne.appendChild(cellule1);
-													tabLigne.appendChild(cellule2);
-													tabLigne.appendChild(cellule3);
-													tabLigne.appendChild(cellule4);
-													tabLigne.appendChild(cellule5);
-
-												//Ajouter la ligne au tableau
-													table.appendChild(tabLigne);
-
-													//parent.appendChild(image1);
-
-												//Vérifier que chaque élément est bien récupéré
-													/*console.log(requete.response.standings[0].table[i].position);
-													console.log(requete.response.standings[0].table[i].team.name);
-													console.log(requete.response.standings[0].table[i].team.crestUrl);
-													console.log(requete.response.standings[0].table[i].playedGames);
-													console.log(requete.response.standings[0].table[i].goalsFor + ":" + requete.response.standings[0].table[i].goalsAgainst);
-													console.log(requete.response.standings[0].table[i].points);*/
-											}
-
-										//Ajouter la table dans la page
-											parent.appendChild(table);
-											table.setAttribute("style","margin: auto;");
-						  }
-						});
-
-				//Initialiser l'url ainsi que l'envoie de la demande de donnée à l'API
-						let url = "https://api.football-data.org/v2/competitions/" + nomLigue + "/standings";
-						requete.open("GET", url);
-						requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
-						//requete.setRequestHeader("X-Authenticated-Client", "anonymous");
-						/*requete.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");*/
-						requete.responseType = 'json';
-						requete.send();
-
-		}
-
-		function afficherResultat(nomLigue){
-			//Variables
-				let parent = document.getElementById('idAffichage');
-				let taille = parent.childNodes.length;
-
-			//Traitements
-				//Supprimer les enfants
-					for (let i=0 ; i<taille ; i++){
-						parent.removeChild(parent.childNodes[0]);
-					}
-
-				//Creer la requete
-						let requete = new XMLHttpRequest();
-
-				//Effectuer le callback et afficher le classement
-						requete.addEventListener("readystatechange", function () {
-							if (this.readyState === 4) {
-									//Variables
-										let nbMatchs = 10;
-										console.log(requete.response);
-										console.log(requete.response.matches[1].homeTeam.name);
-
-									//Creation de la table
-											let table = document.createElement("table");
-
-											//Création de la 1er ligne du tableau
-												let premTabLigne = document.createElement("tr");
-
-												//Création des 1er céllules
-													let premCellule1 = document.createElement("td");
-													let premCellule2 = document.createElement("td");
-													let premCellule3 = document.createElement("td");
-													let premCellule4 = document.createElement("td");
-
-												//Création du texte de chaqu'une des 1er cellules
-													let premTxt1 = document.createTextNode("Equipe a domicile");
-													let premTxt2 = document.createTextNode("but");
-													let premTxt3 = document.createTextNode("but");
-													let premTxt4 = document.createTextNode("Equipe a l'exterieur");
-
-
-
-												//Ajout du texte à chaque cellule
-													premCellule1.appendChild(premTxt1);
-													premCellule2.appendChild(premTxt2);
-													premCellule3.appendChild(premTxt3);
-													premCellule4.appendChild(premTxt4);
-
-												//Ajouter les 1ers cellules à la 1er ligne
-													premTabLigne.appendChild(premCellule1);
-													premTabLigne.appendChild(premCellule2);
-													premTabLigne.appendChild(premCellule3);
-													premTabLigne.appendChild(premCellule4);
-
-												//Ajouter au tableau
-													table.appendChild(premTabLigne);
-
-
-											//BOUCLE PERMETTANT L'AFFICHAGE DU RESTE DU CLASSEMENT
-											for (let i=0 ; i < nbMatchs ; i++){
-											//Création de la ligne du tableau
-												let tabLigne = document.createElement("tr");
-
-												//Création des céllules
-													let cellule1 = document.createElement("td");
-													let cellule2 = document.createElement("td");
-													let cellule3 = document.createElement("td");
-													let cellule4 = document.createElement("td");
-
-													console.log(requete.response.matches[i].homeTeam.name);
-
-												 //Création du texte de chaque cellule
-													let txt1 = document.createTextNode(requete.response.matches[i].homeTeam.name);
-													let txt2 = document.createTextNode("0");
-													let txt3 = document.createTextNode("0");
-													let txt4 = document.createTextNode(requete.response.matches[i].awayTeam.name);
-
-												//Création de l'image du club
-												/*	let image1 = document.createElement('img');
-													image1.setAttribute("src",requete.response.standings[0].table[i].team.crestUrl);
-													image1.setAttribute("height","25");
-													image1.setAttribute("width","18"); */
-
-												//Définir le texte (et l'image) de chaque cellule
-													cellule1.appendChild(txt1);
-													//cellule2.appendChild(image1);
-													cellule2.appendChild(txt2);
-													cellule3.appendChild(txt3);
-													cellule4.appendChild(txt4);
-
-												//Ajouter les cellules à la ligne
-													tabLigne.appendChild(cellule1);
-													tabLigne.appendChild(cellule2);
-													tabLigne.appendChild(cellule3);
-													tabLigne.appendChild(cellule4);
-
-												//Ajouter la ligne au tableau
-													table.appendChild(tabLigne);
-
-													//parent.appendChild(image1);
-
-												//Vérifier que chaque élément est bien récupéré
-													console.log(requete.response.matches[i].homeTeam.name);
-													/*console.log(requete.response.standings[0].table[i].team.name);
-													console.log(requete.response.standings[0].table[i].team.crestUrl);
-													console.log(requete.response.standings[0].table[i].playedGames);
-													console.log(requete.response.standings[0].table[i].goalsFor + ":" + requete.response.standings[0].table[i].goalsAgainst);
-													console.log(requete.response.standings[0].table[i].points); */
-											}
-
-										//Ajouter la table dans la page
-											parent.appendChild(table);
-							}
-						});
-
-				//Initialiser l'url ainsi que l'envoie de la demande de donnée à l'API
-						let url = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches?matchday=30";
-						requete.open("GET", url);
-						requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
-						//requete.setRequestHeader("X-Authenticated-Client", "anonymous");
-						//requete.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");
-						requete.responseType = 'json';
-						requete.send();
-
-		}
-	</script>
-
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Superfish -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
-
-	<!-- Main JS (Do not remove) -->
-	<script src="js/main.js"></script>
-
-	</body>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MeetMyStats</title>
+    <link rel="stylesheet" href="css/myBootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+
+    <link rel="stylesheet" href="css/myBootstrap/styles.css">
+    <link rel="stylesheet" href="css/myBootstrap/Pretty-Footer.css">
+    <link rel="stylesheet" href="css/myBootstrap/Team-Boxed.css">
+</head>
+
+<body>
+    <section>
+        <div id="hero-top">
+          <!-- NAVBAR -->
+            <nav class="navbar navbar-light navbar-expand-md">
+                <div class="container-fluid"><a class="navbar-brand" href="#">MeetMyStats</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse"
+                        id="navcol-1">
+                        <ul class="nav navbar-nav">
+
+                          <!-- LIGUE1 -->
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Ligue1&nbsp;</a>
+                                <div class="dropdown-menu" role="menu">
+                                  <a class="dropdown-item" role="presentation" onclick="afficherClassement('FL1')" href="#">Classement</a>
+                                  <a class="dropdown-item" role="presentation" onclick="afficherResultat('FL1')" href="#">Résultats</a>
+                                </div>
+                            </li>
+
+                          <!-- BUNDESLIGA -->
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Bundesliga&nbsp;</a>
+                                <div class="dropdown-menu" role="menu">
+                                  <a class="dropdown-item" role="presentation" onclick="afficherClassement('BL1')" href="#">Classement</a>
+                                  <a class="dropdown-item" role="presentation" onclick="afficherResultat('BL1')" href="#">Résultats</a>
+                                </div>
+                            </li>
+
+                          <!-- PREMIER LEAGUE -->
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Premier League&nbsp;</a>
+                                <div class="dropdown-menu" role="menu">
+                                  <a class="dropdown-item" role="presentation" onclick="afficherClassement('PL')" href="#">Classement</a>
+                                  <a class="dropdown-item" role="presentation" onclick="afficherResultat('PL')" href="#">Résultats</a>
+                                </div>
+                            </li>
+
+                          <!-- LA LIGUA -->
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">La ligua</a>
+                                <div class="dropdown-menu" role="menu">
+                                  <a class="dropdown-item" role="presentation" onclick="afficherClassement('PD')" href="#">Classement</a>
+                                  <a class="dropdown-item" role="presentation" onclick="afficherResultat('PD')" href="#">Résultats</a>
+                                </div>
+                            </li>
+
+                          <!-- SERIE A -->
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Serie A&nbsp;</a>
+                                <div class="dropdown-menu" role="menu">
+                                  <a class="dropdown-item" role="presentation" onclick="afficherClassement('SA')" href="#">Classement</a>
+                                  <a class="dropdown-item" role="presentation" onclick="afficherResultat('SA')" href="#">Résultats</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+      <!-- CONTENU DE LA PAGE -->
+        <div data-aos="fade-up" data-aos-duration="500" id="hero-botom">
+            <div class="container">
+                <div class="row">
+                    <div class="col" id="idAffichage">
+                          <h1 style="text-align: center;"> Page d'Accueil </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TEAM -->
+    <div id="idTeam" class="team-boxed" data-aos="fade-up" data-aos-duration="500">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Team </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+            </div>
+            <div class="row people">
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="img/4.jpg">
+                        <h3 class="name">Ben Johnson</h3>
+                        <p class="title">Musician</p>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="img/5.jpeg">
+                        <h3 class="name">Emily Clark</h3>
+                        <p class="title">Artist</p>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="img/6.jpg">
+                        <h3 class="name">Carl Kent</h3>
+                        <p class="title">Stylist</p>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 footer-navigation">
+                <h3><a href="#">MeetMy<span>Stats</span></a></h3>
+                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
+                <p class="company-name">Company Name © 2015 </p>
+            </div>
+            <div class="col-sm-6 col-md-4 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p><span class="new-line-span">21 Revolution Street</span> Paris, France</p>
+                </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-left"> +1 555 123456</p>
+                </div>
+                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                    <p> <a href="#" target="_blank">support@company.com</a></p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 footer-about">
+                <h4>About the company</h4>
+                <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet. </p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+    function afficherClassement(nomLigue){
+      //Variables
+        let parent = document.getElementById('idAffichage');
+        let tailleDuContenu = parent.childNodes.length;
+        let teamBlock = document.getElementById('idTeam');
+        let tailleTeam = teamBlock.childNodes.length;
+
+      //Traitements
+        //Supprimer les enfants du div de CONTENU
+          for (let i=0 ; i<tailleDuContenu ; i++){
+            parent.removeChild(parent.childNodes[0]);
+          }
+
+        //Supprimer le block team
+          for (let i=0 ; i<tailleTeam ; i++){
+            teamBlock.removeChild(teamBlock.childNodes[0]);
+          }
+
+
+        //Creer la requete
+            let requete = new XMLHttpRequest();
+
+        //Effectuer le callback et afficher le classement
+            requete.addEventListener("readystatechange", function () {
+              if (this.readyState === 4) {
+                  //Variables
+                    let nbClubs = requete.response.standings[0].table.length;
+
+                  //Creation de la table
+                      let table = document.createElement("table");
+                      table.setAttribute("class","table table-dark table-sm");
+
+                      //Création de l'en tête du tableau
+                      let thead = document.createElement("thead");
+
+                        //Création de la 1er ligne du tableau
+                          let premTabLigne = document.createElement("tr");
+
+                          //Création des 1er céllules
+                            let premCellule1 = document.createElement("td");
+                            let premCellule2 = document.createElement("td");
+                            let premCellule3 = document.createElement("td");
+                            let premCellule4 = document.createElement("td");
+                            let premCellule5 = document.createElement("td");
+
+                          //Création du texte de chaqu'une des 1er cellules
+                            let premTxt1 = document.createTextNode("Pos");
+                            let premTxt2 = document.createTextNode("Nom");
+                            let premTxt3 = document.createTextNode("MJ");
+                            let premTxt4 = document.createTextNode("BM:BE");
+                            let premTxt5 = document.createTextNode("Pts");
+
+                          //Ajout du texte à chaque cellule
+                            premCellule1.appendChild(premTxt1);
+                            premCellule2.appendChild(premTxt2);
+                            premCellule3.appendChild(premTxt3);
+                            premCellule4.appendChild(premTxt4);
+                            premCellule5.appendChild(premTxt5);
+
+                          //Ajouter les 1ers cellules à la 1er ligne
+                            premTabLigne.appendChild(premCellule1);
+                            premTabLigne.appendChild(premCellule2);
+                            premTabLigne.appendChild(premCellule3);
+                            premTabLigne.appendChild(premCellule4);
+                            premTabLigne.appendChild(premCellule5);
+
+                          //Ajouter au tableau
+                            thead.appendChild(premTabLigne)
+                            table.appendChild(thead);
+
+                          //Creation du corp du tableau
+                            let tbody = document.createElement("tbody");
+
+                        //BOUCLE PERMETTANT L'AFFICHAGE DU RESTE DU CLASSEMENT
+                        for (let i=0 ; i < nbClubs ; i++){
+                        //Création de la ligne du tableau
+                          let tabLigne = document.createElement("tr");
+
+                          //Création des céllules
+                            let cellule1 = document.createElement("td");
+                            let cellule2 = document.createElement("td");
+                            let cellule3 = document.createElement("td");
+                            let cellule4 = document.createElement("td");
+                            let cellule5 = document.createElement("td");
+
+                          //Création du texte de chaque cellule
+                            let txt1 = document.createTextNode(requete.response.standings[0].table[i].position);
+                            let txt2 = document.createTextNode("   " + requete.response.standings[0].table[i].team.name);
+                            let txt3 = document.createTextNode(requete.response.standings[0].table[i].playedGames);
+                            let txt4 = document.createTextNode(requete.response.standings[0].table[i].goalsFor + ":" + requete.response.standings[0].table[i].goalsAgainst);
+                            let txt5 = document.createTextNode(requete.response.standings[0].table[i].points);
+
+                          //Création de l'image du club
+                            let image1 = document.createElement('img');
+                            image1.setAttribute("src",requete.response.standings[0].table[i].team.crestUrl);
+                            image1.setAttribute("height","25");
+                            image1.setAttribute("width","25");
+
+                          //Définir le texte (et l'image) de chaque cellule
+                            cellule1.appendChild(txt1);
+                            cellule2.appendChild(image1);
+                            cellule2.appendChild(txt2);
+                            cellule3.appendChild(txt3);
+                            cellule4.appendChild(txt4);
+                            cellule5.appendChild(txt5);
+
+                          //Ajouter les cellules à la ligne
+                            tabLigne.appendChild(cellule1);
+                            tabLigne.appendChild(cellule2);
+                            tabLigne.appendChild(cellule3);
+                            tabLigne.appendChild(cellule4);
+                            tabLigne.appendChild(cellule5);
+
+                          //Ajouter la ligne au corp du tableau
+                            tbody.appendChild(tabLigne);
+
+                            //parent.appendChild(image1);
+
+                          //Vérifier que chaque élément est bien récupéré
+                            /*console.log(requete.response.standings[0].table[i].position);
+                            console.log(requete.response.standings[0].table[i].team.name);
+                            console.log(requete.response.standings[0].table[i].team.crestUrl);
+                            console.log(requete.response.standings[0].table[i].playedGames);
+                            console.log(requete.response.standings[0].table[i].goalsFor + ":" + requete.response.standings[0].table[i].goalsAgainst);
+                            console.log(requete.response.standings[0].table[i].points);*/
+                        }
+
+                    //Ajouter le corp du tableau au tableau
+                      table.appendChild(tbody);
+
+                    //Ajouter la table dans la page
+                      parent.appendChild(table);
+              }
+            });
+
+        //Initialiser l'url ainsi que l'envoie de la demande de donnée à l'API
+            let url = "https://api.football-data.org/v2/competitions/" + nomLigue + "/standings";
+            requete.open("GET", url);
+            requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+            //requete.setRequestHeader("X-Authenticated-Client", "anonymous");
+            /*requete.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");*/
+            requete.responseType = 'json';
+            requete.send();
+
+    }
+
+    function journeeCourante(nomLigue){
+
+        //Creer la requete
+            let requete = new XMLHttpRequest();
+
+        //Effectuer le callback et afficher le classement
+            requete.addEventListener("readystatechange", function () {
+              if (this.readyState === 4) {
+                return (requete.response.matches[0].season.currentMatchday);
+              }
+            });
+
+
+          //Initialiser l'url ainsi que l'envoie de la demande de donnée à l'API
+              let url = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches";
+              requete.open("GET", url);
+              requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+              requete.responseType = 'json';
+              requete.send();
+    }
+
+
+    function afficherResultat(nomLigue){
+      //Variables
+        let parent = document.getElementById('idAffichage');
+        let taille = parent.childNodes.length;
+        let teamBlock = document.getElementById('idTeam');
+        let tailleTeam = teamBlock.childNodes.length;
+
+      //Traitements
+        //Supprimer les enfants
+          for (let i=0 ; i<taille ; i++){
+            parent.removeChild(parent.childNodes[0]);
+          }
+
+        //Supprimer le block team
+          for (let i=0 ; i<tailleTeam ; i++){
+            teamBlock.removeChild(teamBlock.childNodes[0]);
+          }
+
+        //Creer la requete
+            let requete1 = new XMLHttpRequest();
+
+        // créer le champs permettant de choisir la journée
+        let jouneeInput=document.createElement("input");
+        let journeeSuivant= document.createElement("button");
+        let journeePrecedent=document.createElement("button");
+
+        //Effectuer le 1er callback pour récupéré la journée courrante
+            requete1.addEventListener("readystatechange", function () {
+              if (this.readyState === 4) {
+                journeeMatch = (requete1.response.matches[0].season.currentMatchday + 1); console.log("NB journ dans la " + nomLigue + " " + journeeMatch);
+
+                //DEUXIEME REQUETE POUR AFFICHER LE CLASSEMENT
+
+                //Creer la requete
+                let requete2 = new XMLHttpRequest();
+
+
+              //Effectuer le 2 eme callback et afficher le classement
+                  requete2.addEventListener("readystatechange", function () {
+                    if (this.readyState === 4) {
+                        //Variables
+                          let nbMatchs = requete2.response.count;
+                          console.log("Nb match" + nbMatchs);
+                          console.log("Local" + requete2.response.matches[0].homeTeam.name);
+                          console.log("Local" + requete2.response.matches[0].awayTeam.name);
+
+                        //Creation de la table
+                            let table = document.createElement("table");
+                            table.setAttribute("class","table table-dark table-sm");
+
+                            //Création de l'en tête du tableau
+                            let thead = document.createElement("thead");
+
+                            //Création de la 1er ligne du tableau
+                              let premTabLigne = document.createElement("tr");
+
+                              //Création des 1er céllules avec ID
+                                let premCellule1 = document.createElement("td");
+                                let premCellule2 = document.createElement("td");
+                                let premCellule3 = document.createElement("td");
+
+                              //Création du texte de chaqu'une des 1er cellules
+                                let premTxt1 = document.createTextNode("Equipe à domicile");
+                                let premTxt2 = document.createTextNode("Score");
+                                let premTxt3 = document.createTextNode("Equipe à l'exterieur");
+
+
+
+                              //Ajout du texte à chaque cellule
+                                premCellule1.appendChild(premTxt1);
+                                premCellule2.appendChild(premTxt2);
+                                premCellule3.appendChild(premTxt3);
+
+                              //Ajouter les 1ers cellules à la 1er ligne
+                                premTabLigne.appendChild(premCellule1);
+                                premTabLigne.appendChild(premCellule2);
+                                premTabLigne.appendChild(premCellule3);
+
+                              //Ajout à l'en tête du tableau
+                                thead.appendChild(premTabLigne);
+                              //Ajouter au tableau
+                                table.appendChild(thead);
+
+                            //Creation du corp du tableau
+                              let tbody = document.createElement("tbody");
+
+                            //BOUCLE PERMETTANT L'AFFICHAGE DU RESTE DU CLASSEMENT
+                            for (let i=0 ; i < nbMatchs ; i++){
+                            //Création de la ligne du tableau
+                              let tabLigne = document.createElement("tr");
+
+                              //Création des céllules
+                                let cellule1 = document.createElement("td");
+                                let cellule2 = document.createElement("td");
+                                let cellule3 = document.createElement("td");
+
+                                //console.log(requete2.response.matches[i].homeTeam.name);
+
+                               //Création du texte de chaque cellule
+                                  let resultatMatch = requete2.response.matches[i].score.winner; console.log("winner" + resultatMatch);
+                                  let statuMatch = requete2.response.matches[i].status; console.log("Statut" + statuMatch);
+                                  let dateMatch = requete2.response.matches[i].utcDate.split("T")[0].split("-")[1] + "/" + requete2.response.matches[i].utcDate.split("T")[0].split("-")[2];
+                                  let heureMatch = requete2.response.matches[i].utcDate.split("T")[1].split(":")[0] + "h" + requete2.response.matches[i].utcDate.split("T")[1].split(":")[1];
+                                  let equipeLocal = document.createTextNode(requete2.response.matches[i].homeTeam.name);
+                                  let scoreMatch = document.createTextNode(requete2.response.matches[i].score.fullTime.homeTeam + " - " + requete2.response.matches[i].score.fullTime.awayTeam);
+                                  let equipeExterieur = document.createTextNode(requete2.response.matches[i].awayTeam.name);
+
+
+                              //Définir le texte (et l'image) de chaque cellule
+                                cellule1.appendChild(equipeLocal);
+
+                                //Vérifier l'etat du match
+                                  if(statuMatch == "SCHEDULED" || statuMatch == "FINISHED"){
+
+                                    if(resultatMatch != null){
+                                      cellule2.appendChild(scoreMatch);
+                                    }
+                                    else{
+                                      let txtDateMatch = document.createTextNode(dateMatch + " - " + heureMatch);
+                                      cellule2.appendChild(txtDateMatch);
+                                    }
+                                  }
+                                  else {
+                                    let matchReporte = document.createTextNode(statuMatch);
+                                    cellule2.appendChild(matchReporte);
+                                  }
+
+                                cellule3.appendChild(equipeExterieur);
+
+                              //Ajouter les cellules à la ligne
+                                tabLigne.appendChild(cellule1);
+                                tabLigne.appendChild(cellule2);
+                                tabLigne.appendChild(cellule3);
+
+                              //Ajouter la ligne au tableau
+                                tbody.appendChild(tabLigne);
+
+                            }
+
+                          //Ajouter le corp du tableau au tableau
+                            table.appendChild(tbody);
+
+                          //Ajouter la table dans la page
+                            parent.appendChild(table);
+                    }
+                  });
+
+              //Demander le classement de l'API
+                  let url2 = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches?matchday=" + journeeMatch;
+                  requete2.open("GET", url2);
+                  requete2.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+                  //requete2.setRequestHeader("X-Authenticated-Client", "anonymous");
+                  //requete2.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");
+                  requete2.responseType = 'json';
+                  requete2.send();
+              }
+            });
+
+
+          //Demander la journée courrante à l'API
+              let url1 = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches";
+              requete1.open("GET", url1);
+              requete1.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+              requete1.responseType = 'json';
+              requete1.send();
+
+
+    }
+    </script>
+    <script src="js/myBootstrap/jquery.min.js"></script>
+    <script src="js/myBootstrap/bootstrap.min.js"></script>
+    <script src="js/myBootstrap/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+</body>
+
 </html>
