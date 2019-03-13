@@ -23,7 +23,7 @@
         <div id="hero-top">
           <!-- NAVBAR -->
             <nav class="navbar navbar-light navbar-expand-md">
-                <div class="container-fluid"><a class="navbar-brand" href="#">MeetMyStats</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="container-fluid"><a class="navbar-brand" href="index.html">MeetMyStats</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse"
                         id="navcol-1">
                         <ul class="nav navbar-nav">
@@ -75,7 +75,7 @@
 
       <!-- CONTENU DE LA PAGE -->
         <div data-aos="fade-up" data-aos-duration="500" id="hero-botom">
-            <div class="container">
+            <div class="container" id="containerContenu">
                 <div class="row">
                     <div class="col" id="idAffichage">
                           <h1 style="text-align: center;"> Page d'Accueil </h1>
@@ -96,24 +96,24 @@
             <div class="row people">
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box"><img class="rounded-circle" src="img/4.jpg">
-                        <h3 class="name">Ben Johnson</h3>
-                        <p class="title">Musician</p>
+                        <h3 class="name">Richard Boilley</h3>
+                        <p class="title">Développeur Full-stack</p>
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box"><img class="rounded-circle" src="img/5.jpeg">
-                        <h3 class="name">Emily Clark</h3>
-                        <p class="title">Artist</p>
+                        <h3 class="name">Kesly Gassant</h3>
+                        <p class="title">Développeur Back-end</p>
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box"><img class="rounded-circle" src="img/6.jpg">
-                        <h3 class="name">Carl Kent</h3>
-                        <p class="title">Stylist</p>
+                        <h3 class="name">Alexandre Lemoine</h3>
+                        <p class="title">Développeur Front-end</p>
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
                     </div>
@@ -129,17 +129,17 @@
             <div class="col-sm-6 col-md-4 footer-navigation">
                 <h3><a href="#">MeetMy<span>Stats</span></a></h3>
                 <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
-                <p class="company-name">Company Name © 2015 </p>
+                <p class="company-name">MeetMyCorporation © 2019 </p>
             </div>
             <div class="col-sm-6 col-md-4 footer-contacts">
                 <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
-                    <p><span class="new-line-span">21 Revolution Street</span> Paris, France</p>
+                    <p><span class="new-line-span">1 Allée Paulmy</span> Bayonne, France</p>
                 </div>
                 <div><i class="fa fa-phone footer-contacts-icon"></i>
-                    <p class="footer-center-info email text-left"> +1 555 123456</p>
+                    <p class="footer-center-info email text-left"> +33 555 123456</p>
                 </div>
                 <div><i class="fa fa-envelope footer-contacts-icon"></i>
-                    <p> <a href="#" target="_blank">support@company.com</a></p>
+                    <p> <a href="#" target="_blank">meetmystats2019@gmail.com</a></p>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -158,6 +158,8 @@
         let tailleDuContenu = parent.childNodes.length;
         let teamBlock = document.getElementById('idTeam');
         let tailleTeam = teamBlock.childNodes.length;
+        /*let leConteneur = document.getElementById('containerContenu');
+        let tailleCont = leConteneur.childNodes.length; console.log(tailleCont);*/
 
       //Traitements
         //Supprimer les enfants du div de CONTENU
@@ -168,6 +170,16 @@
         //Supprimer le block team
           for (let i=0 ; i<tailleTeam ; i++){
             teamBlock.removeChild(teamBlock.childNodes[0]);
+          }
+
+        //Supprimer le block conteneur
+          if(document.getElementById('idAvant') != null){
+            let rowBtn = document.getElementById('idApres').parentElement.parentElement; //On récupère la row qui contient les 2 btns
+            let tailleRow = rowBtn.childNodes.length;
+
+            for (let i=0 ; i<tailleRow ; i++){
+              rowBtn.removeChild(rowBtn.childNodes[0]);
+            }
           }
 
 
@@ -324,8 +336,11 @@
       //Variables
         let parent = document.getElementById('idAffichage');
         let taille = parent.childNodes.length;
+
         let teamBlock = document.getElementById('idTeam');
         let tailleTeam = teamBlock.childNodes.length;
+
+        let leConteneur = document.getElementById('containerContenu');
 
       //Traitements
         //Supprimer les enfants
@@ -338,18 +353,77 @@
             teamBlock.removeChild(teamBlock.childNodes[0]);
           }
 
+        //Supprimer le block conteneur
+          if(document.getElementById('idAvant') != null){
+            let rowBtn = document.getElementById('idApres').parentElement.parentElement; //On récupère la row qui contient les 2 btns
+            let tailleRow = rowBtn.childNodes.length;
+
+            for (let i=0 ; i<tailleRow ; i++){
+              rowBtn.removeChild(rowBtn.childNodes[0]);
+            }
+          }
+
+        //AJout des boutons
+          //Créer un row
+            let row = document.createElement("div"); row.setAttribute("class","row");
+            row.setAttribute("id","rowBoutons");
+
+          //Créer troix colonnes
+            let col1 = document.createElement("div"); col1.setAttribute("class","col-3");
+            let col2 = document.createElement("div"); col2.setAttribute("class","col-6");
+            let col3 = document.createElement("div"); col3.setAttribute("class","col-3"); col3.setAttribute("id","col-btn-right")
+
+          //Créer 2 boutons
+            let txtBtn1 = document.createTextNode('<');
+            let btn1 = document.createElement('button');
+            btn1.setAttribute("id","idAvant");
+            btn1.setAttribute("class","btn btn-primary");btn1.appendChild(txtBtn1);
+
+            let txtBtn2 = document.createTextNode('>');
+            let btn2 = document.createElement('button');
+            btn2.setAttribute("id","idApres");btn2.setAttribute("class","btn btn-primary");btn2.appendChild(txtBtn2);
+
+          //Créer la liste déroulante
+            let select = document.createElement("select");select.setAttribute("class","custom-select");select.setAttribute("onchange","afficherResultat2(\"" + nomLigue + "\", value)");
+
+
+
+          //Imbrication des élements créé
+            col1.appendChild(btn1);
+            col2.appendChild(select);
+            col3.appendChild(btn2);
+            row.appendChild(col1);
+            row.appendChild(col2);
+            row.appendChild(col3);
+            leConteneur.insertBefore(row,leConteneur.childNodes[0]);
+
         //Creer la requete
             let requete1 = new XMLHttpRequest();
-
-        // créer le champs permettant de choisir la journée
-        let jouneeInput=document.createElement("input");
-        let journeeSuivant= document.createElement("button");
-        let journeePrecedent=document.createElement("button");
 
         //Effectuer le 1er callback pour récupéré la journée courrante
             requete1.addEventListener("readystatechange", function () {
               if (this.readyState === 4) {
-                journeeMatch = (requete1.response.matches[0].season.currentMatchday + 1); console.log("NB journ dans la " + nomLigue + " " + journeeMatch);
+                journeeMatch = (requete1.response.season.currentMatchday + 1); console.log("NB journ dans la " + nomLigue + " " + journeeMatch);
+
+                //Définir la value des boutons
+                  btn1.setAttribute("onclick","afficherResultat2(\"" + nomLigue + "\", " + (journeeMatch-1) + ")");
+                  btn2.setAttribute("onclick","afficherResultat2(\"" + nomLigue + "\", " + (journeeMatch+1) + ")");
+
+                //Ajout de toutes les journées dans liste déroulante
+                  let nbJournee = (requete1.response.standings[0].table.length - 1) * 2; // nbJournee = (nbEquipes-1) * 2
+
+                  for(let i=1 ; i <= nbJournee ; i++){
+                    let txtJournee = document.createTextNode("Journée " + i);
+                    let option = document.createElement("option");
+                    option.setAttribute("value",i);
+                    option.appendChild(txtJournee);
+
+                    //Vérifier que la ième journée à la journéeCOurante
+                    if(i == journeeMatch){
+                      option.setAttribute("selected","selected");
+                    }
+                    select.appendChild(option);
+                  }
 
                 //DEUXIEME REQUETE POUR AFFICHER LE CLASSEMENT
 
@@ -480,7 +554,7 @@
 
 
           //Demander la journée courrante à l'API
-              let url1 = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches";
+              let url1 = "https://api.football-data.org/v2/competitions/" + nomLigue + "/standings";
               requete1.open("GET", url1);
               requete1.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
               requete1.responseType = 'json';
@@ -488,6 +562,241 @@
 
 
     }
+
+    function afficherResultat2(nomLigue,journeeMatch){
+      //Variables
+        let parent = document.getElementById('idAffichage');
+        let taille = parent.childNodes.length;
+
+        let teamBlock = document.getElementById('idTeam');
+        let tailleTeam = teamBlock.childNodes.length;
+
+        let leConteneur = document.getElementById('containerContenu');
+
+      //Traitements
+        //Supprimer les enfants
+          for (let i=0 ; i<taille ; i++){
+            parent.removeChild(parent.childNodes[0]);
+          }
+
+        //Supprimer le block team
+          for (let i=0 ; i<tailleTeam ; i++){
+            teamBlock.removeChild(teamBlock.childNodes[0]);
+          }
+
+        //Supprimer le block conteneur
+          if(document.getElementById('idAvant') != null){
+            let rowBtn = document.getElementById('idApres').parentElement.parentElement; //On récupère la row qui contient les 2 btns
+            let tailleRow = rowBtn.childNodes.length;
+
+            for (let i=0 ; i<tailleRow ; i++){
+              rowBtn.removeChild(rowBtn.childNodes[0]);
+            }
+          }
+
+        //AJout des boutons
+          //Créer un row
+            let row = document.createElement("div"); row.setAttribute("class","row");
+            row.setAttribute("id","rowBoutons");
+
+          //Créer troix colonnes
+            let col1 = document.createElement("div"); col1.setAttribute("class","col-3");
+            let col2 = document.createElement("div"); col2.setAttribute("class","col-6");
+            let col3 = document.createElement("div"); col3.setAttribute("class","col-3"); col3.setAttribute("id","col-btn-right")
+
+          //Créer 2 boutons
+            let txtBtn1 = document.createTextNode('<');
+            let btn1 = document.createElement('button');
+            btn1.setAttribute("id","idAvant");
+            btn1.setAttribute("class","btn btn-primary");btn1.appendChild(txtBtn1);
+
+            let txtBtn2 = document.createTextNode('>');
+            let btn2 = document.createElement('button');
+            btn2.setAttribute("id","idApres");btn2.setAttribute("class","btn btn-primary");btn2.appendChild(txtBtn2);
+
+          //Créer la liste déroulante
+            let select = document.createElement("select");select.setAttribute("class","custom-select");select.setAttribute("onchange","afficherResultat2(\"" + nomLigue + "\", value)");
+
+
+          //Imbrication des élements créé
+            col1.appendChild(btn1);
+            col2.appendChild(select);
+            col3.appendChild(btn2);
+            row.appendChild(col1);
+            row.appendChild(col2);
+            row.appendChild(col3);
+            leConteneur.insertBefore(row,leConteneur.childNodes[0]);
+
+        //Creer la requete
+            let requete1 = new XMLHttpRequest();
+
+        //Effectuer le 1er callback pour récupéré la journée courrante
+            requete1.addEventListener("readystatechange", function () {
+              if (this.readyState === 4) {
+
+                //Définir la value des boutons
+                  btn1.setAttribute("onclick","afficherResultat2(\"" + nomLigue + "\", " + (journeeMatch-1) + ")");
+                  btn2.setAttribute("onclick","afficherResultat2(\"" + nomLigue + "\", " + (journeeMatch+1) + ")");
+
+                //Ajout de toutes les journées dans liste déroulante
+                  let nbJournee = (requete1.response.standings[0].table.length - 1) * 2; // nbJournee = (nbEquipes-1) * 2
+                  console.log("br de jours " + nbJournee);
+                  for(let i=1 ; i <= nbJournee ; i++){
+                    let txtJournee = document.createTextNode("Journée " + i);
+                    let option = document.createElement("option");
+                    //option.setAttribute("onclick","afficherResultat2(\"" + nomLigue + "\", " + i + ")");
+                    option.setAttribute("value",i);
+                    option.appendChild(txtJournee);
+
+                    //Vérifier que la ième journée à la journéeCOurante
+                    if(i == journeeMatch){
+                      option.setAttribute("selected","selected");
+                    }
+                    select.appendChild(option);
+                  }
+
+                //DEUXIEME REQUETE POUR AFFICHER LE CLASSEMENT
+
+                //Creer la requete
+                let requete2 = new XMLHttpRequest();
+
+
+              //Effectuer le 2 eme callback et afficher le classement
+                  requete2.addEventListener("readystatechange", function () {
+                    if (this.readyState === 4) {
+                        //Variables
+                          let nbMatchs = requete2.response.count;
+                          console.log("Nb match" + nbMatchs);
+                          console.log("Local" + requete2.response.matches[0].homeTeam.name);
+                          console.log("Local" + requete2.response.matches[0].awayTeam.name);
+
+                        //Creation de la table
+                            let table = document.createElement("table");
+                            table.setAttribute("class","table table-dark table-sm");
+
+                            //Création de l'en tête du tableau
+                            let thead = document.createElement("thead");
+
+                            //Création de la 1er ligne du tableau
+                              let premTabLigne = document.createElement("tr");
+
+                              //Création des 1er céllules avec ID
+                                let premCellule1 = document.createElement("td");
+                                let premCellule2 = document.createElement("td");
+                                let premCellule3 = document.createElement("td");
+
+                              //Création du texte de chaqu'une des 1er cellules
+                                let premTxt1 = document.createTextNode("Equipe à domicile");
+                                let premTxt2 = document.createTextNode("Score");
+                                let premTxt3 = document.createTextNode("Equipe à l'exterieur");
+
+
+
+                              //Ajout du texte à chaque cellule
+                                premCellule1.appendChild(premTxt1);
+                                premCellule2.appendChild(premTxt2);
+                                premCellule3.appendChild(premTxt3);
+
+                              //Ajouter les 1ers cellules à la 1er ligne
+                                premTabLigne.appendChild(premCellule1);
+                                premTabLigne.appendChild(premCellule2);
+                                premTabLigne.appendChild(premCellule3);
+
+                              //Ajout à l'en tête du tableau
+                                thead.appendChild(premTabLigne);
+                              //Ajouter au tableau
+                                table.appendChild(thead);
+
+                            //Creation du corp du tableau
+                              let tbody = document.createElement("tbody");
+
+                            //BOUCLE PERMETTANT L'AFFICHAGE DU RESTE DU CLASSEMENT
+                            for (let i=0 ; i < nbMatchs ; i++){
+                            //Création de la ligne du tableau
+                              let tabLigne = document.createElement("tr");
+
+                              //Création des céllules
+                                let cellule1 = document.createElement("td");
+                                let cellule2 = document.createElement("td");
+                                let cellule3 = document.createElement("td");
+
+                                //console.log(requete2.response.matches[i].homeTeam.name);
+
+                               //Création du texte de chaque cellule
+                                  let resultatMatch = requete2.response.matches[i].score.winner; console.log("winner" + resultatMatch);
+                                  let statuMatch = requete2.response.matches[i].status; console.log("Statut" + statuMatch);
+                                  let dateMatch = requete2.response.matches[i].utcDate.split("T")[0].split("-")[1] + "/" + requete2.response.matches[i].utcDate.split("T")[0].split("-")[2];
+                                  let heureMatch = requete2.response.matches[i].utcDate.split("T")[1].split(":")[0] + "h" + requete2.response.matches[i].utcDate.split("T")[1].split(":")[1];
+                                  let equipeLocal = document.createTextNode(requete2.response.matches[i].homeTeam.name);
+                                  let scoreMatch = document.createTextNode(requete2.response.matches[i].score.fullTime.homeTeam + " - " + requete2.response.matches[i].score.fullTime.awayTeam);
+                                  let equipeExterieur = document.createTextNode(requete2.response.matches[i].awayTeam.name);
+
+
+                              //Définir le texte (et l'image) de chaque cellule
+                                cellule1.appendChild(equipeLocal);
+
+                                //Vérifier l'etat du match
+                                  if(statuMatch == "SCHEDULED" || statuMatch == "FINISHED"){
+
+                                    if(resultatMatch != null){
+                                      cellule2.appendChild(scoreMatch);
+                                    }
+                                    else{
+                                      let txtDateMatch = document.createTextNode(dateMatch + " - " + heureMatch);
+                                      cellule2.appendChild(txtDateMatch);
+                                    }
+                                  }
+                                  else {
+                                    let matchReporte = document.createTextNode(statuMatch);
+                                    cellule2.appendChild(matchReporte);
+                                  }
+
+                                cellule3.appendChild(equipeExterieur);
+
+                              //Ajouter les cellules à la ligne
+                                tabLigne.appendChild(cellule1);
+                                tabLigne.appendChild(cellule2);
+                                tabLigne.appendChild(cellule3);
+
+                              //Ajouter la ligne au tableau
+                                tbody.appendChild(tabLigne);
+
+                            }
+
+                          //Ajouter le corp du tableau au tableau
+                            table.appendChild(tbody);
+
+                          //Ajouter la table dans la page
+                            parent.appendChild(table);
+                    }
+                  });
+
+              //Demander le classement de l'API
+                  let url2 = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches?matchday=" + journeeMatch;
+                  requete2.open("GET", url2);
+                  requete2.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+                  //requete2.setRequestHeader("X-Authenticated-Client", "anonymous");
+                  //requete2.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");
+                  requete2.responseType = 'json';
+                  requete2.send();
+              }
+            });
+
+
+          //Demander la journée courrante à l'API
+              let url1 = "https://api.football-data.org/v2/competitions/" + nomLigue + "/standings";
+              requete1.open("GET", url1);
+              requete1.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+              requete1.responseType = 'json';
+              requete1.send();
+
+
+    }
+
+
+
+
+
     </script>
     <script src="js/myBootstrap/jquery.min.js"></script>
     <script src="js/myBootstrap/bootstrap.min.js"></script>

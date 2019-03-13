@@ -117,3 +117,13 @@ div.social-links {
   color: rgb(255,255,255);
 }
 
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #fff;
+}
+
+#col-btn-right {
+  text-align: right;
+}
+
