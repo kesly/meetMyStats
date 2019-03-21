@@ -30,7 +30,7 @@
 
                           <!-- NEWS -->
                             <li class="nav-item ">
-                                  <a class="dropdown-item" role="presentation" onclick="afficherClassement('FL1')" href="#">Classement</a>
+                                  <a class="nav-link" onclick="afficherActu()" href="#">Actualité</a>
                             </li>
 
                           <!-- LIGUE1 -->
@@ -381,14 +381,18 @@
             let col3 = document.createElement("div"); col3.setAttribute("class","col-3"); col3.setAttribute("id","col-btn-right")
 
           //Créer 2 boutons
-            let txtBtn1 = document.createTextNode('<');
+            let i1 = document.createElement("i");
+            i1.setAttribute("class","fa fa-angle-left");
+            //let txtBtn1 = document.createTextNode('<');
             let btn1 = document.createElement('button');
             btn1.setAttribute("id","idAvant");
-            btn1.setAttribute("class","btn btn-primary");btn1.appendChild(txtBtn1);
+            btn1.setAttribute("class","btn btn-primary");/*btn1.appendChild(txtBtn1);*/ btn1.appendChild(i1);
 
-            let txtBtn2 = document.createTextNode('>');
+            let i2 = document.createElement("i");
+            i2.setAttribute("class","fa fa-angle-right²");
+            //let txtBtn2 = document.createTextNode('>');
             let btn2 = document.createElement('button');
-            btn2.setAttribute("id","idApres");btn2.setAttribute("class","btn btn-primary");btn2.appendChild(txtBtn2);
+            btn2.setAttribute("id","idApres");btn2.setAttribute("class","btn btn-primary");/*btn2.appendChild(txtBtn2);*/btn2.appendChild(i2);
 
           //Créer la liste déroulante
             let select = document.createElement("select");select.setAttribute("class","custom-select");select.setAttribute("onchange","afficherResultat(\"" + nomLigue + "\", value)");
@@ -412,7 +416,7 @@
               if (this.readyState === 4) {
 
                 if(journeeMatch == null){
-                  journeeMatch = requete1.response.season.currentMatchday; console.log("NB journ dans la " + nomLigue + " " + journeeMatch);
+                  journeeMatch = requete1.response.season.currentMatchday; /*console.log("Nb journ dans la " + nomLigue + " " + journeeMatch);*/
                 }
 
                 //Définir la value des boutons
@@ -446,9 +450,9 @@
                     if (this.readyState === 4) {
                         //Variables
                           let nbMatchs = requete2.response.count;
-                          console.log("Nb match" + nbMatchs);
+                          /*console.log("Nb match" + nbMatchs);
                           console.log("Local" + requete2.response.matches[0].homeTeam.name);
-                          console.log("Local" + requete2.response.matches[0].awayTeam.name);
+                          console.log("Local" + requete2.response.matches[0].awayTeam.name);*/
 
                         //Creation de la table
                             let table = document.createElement("table");
@@ -569,6 +573,160 @@
               requete1.send();
 
 
+    }
+
+
+    function afficherActu(){
+      //Variables
+        let parent = document.getElementById('idAffichage');
+        let tailleDuContenu = parent.childNodes.length;
+        let teamBlock = document.getElementById('idTeam');
+        let tailleTeam = teamBlock.childNodes.length;
+        /*let leConteneur = document.getElementById('containerContenu');
+        let tailleCont = leConteneur.childNodes.length; console.log(tailleCont);*/
+
+      //Traitements
+        //Supprimer les enfants du div de CONTENU
+          for (let i=0 ; i<tailleDuContenu ; i++){
+            parent.removeChild(parent.childNodes[0]);
+          }
+
+        //Supprimer le block team
+          for (let i=0 ; i<tailleTeam ; i++){
+            teamBlock.removeChild(teamBlock.childNodes[0]);
+          }
+
+        //Supprimer le block conteneur
+          if(document.getElementById('idAvant') != null){
+            let rowBtn = document.getElementById('idApres').parentElement.parentElement; //On récupère la row qui contient les 2 btns
+            let tailleRow = rowBtn.childNodes.length;
+
+            for (let i=0 ; i<tailleRow ; i++){
+              rowBtn.removeChild(rowBtn.childNodes[0]);
+            }
+          }
+
+
+        //Creer la requete
+            let requete = new XMLHttpRequest();
+
+        //Effectuer le callback et afficher le classement
+            requete.addEventListener("readystatechange", function () {
+              if (this.readyState === 4) {
+                  //Variables
+                    let nbArticle = requete.response.totalResults; console.log(nbArticle);
+
+                  //Creation du container
+                      let containerCarte = document.createElement("div");
+                      containerCarte.setAttribute("class","container-fluid");
+
+                      let nbCartes = 0;
+
+                        //BOUCLE PERMETTANT L'AFFICHAGE DES ARTICLES
+                        for (let i=0 ; i < nbArticle ; i++){
+                          //Création de la ligne
+                            //if(nbCartes == 0){
+                              let ligneCarte = document.createElement("div");
+                              ligneCarte.setAttribute("class","row");
+                            //}
+                          //Création de la colone
+                            let colCarte = document.createElement("div");
+                            colCarte.setAttribute("class","col-md-3 col-sm-6 col-xs-12");
+
+                          //Création de la carte
+                            let carte = document.createElement("div");
+                            carte.setAttribute("class","card mb-3");
+
+                          //Création titre + ajout dans la carte
+                            //Suprésion des carractères inatendu comme "&#039;"   =  '
+                              let leTitreTab = requete.response.articles[i].title.split('&#039;');
+                              let leTitre = leTitreTab[0];
+                              let laTailleTitre = leTitreTab.length;
+                              for(let j=1 ; j < laTailleTitre ; j++){
+                                leTitre += "'" + leTitreTab[j];
+                              }
+
+                            //Création et ajout du texte du titre
+                              let txtTitre = document.createTextNode(leTitre);
+                              let titreCarte = document.createElement("h5");
+                              titreCarte.setAttribute("class","card-title");
+                              titreCarte.setAttribute("style","font-size: 15px;");
+                              titreCarte.appendChild(txtTitre);
+
+                            //Ajout du titre à la carte
+                              carte.appendChild(titreCarte);
+
+                          //Création et ajout de l'image
+                            //Création de l'image de la carte
+                              let imgCarte = document.createElement("img");
+                              imgCarte.setAttribute("style","height: 170px; width: 100%; display: block;");
+                              imgCarte.setAttribute("src",requete.response.articles[i].urlToImage);
+
+                            //Ajout de l'image à la carte
+                              carte.appendChild(imgCarte);
+
+                          //Création et ajout du descriptif
+                            //Création emplacement descriptif de la carte
+                              let emplacementDescriptif = document.createElement("div");
+                              emplacementDescriptif.setAttribute("class","card-body");
+
+                            //Création du descriptif de la carte
+                              let txtDescriptif = document.createTextNode(requete.response.articles[i].description);
+                              let descriptifCarte = document.createElement("p");
+                              descriptifCarte.appendChild(txtDescriptif);
+                              descriptifCarte.setAttribute("class","card-text");
+                              descriptifCarte.setAttribute("style","font-size: 12px;");
+
+
+                            //Ajout descriptif dans l'emplacement
+                              emplacementDescriptif.appendChild(descriptifCarte);
+
+                            //Ajout de l'emplacement dans la carte
+                              carte.appendChild(emplacementDescriptif);
+
+
+                          //Ajout des éléments
+                            colCarte.appendChild(carte);
+                            ligneCarte.appendChild(colCarte);
+                            containerCarte.appendChild(ligneCarte);
+
+                        }
+
+                    //Ajouter le conteneur de carte dans la page
+                      parent.appendChild(containerCarte);
+              }
+            });
+
+        //Initialiser l'url ainsi que l'envoie de la demande de donnée à l'API
+            let url = "https://newsapi.org/v2/top-headlines?sources=lequipe&apiKey=a1b822da6e074842bb4cd2063a7a03f7";
+            requete.open("GET", url);
+            //requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+            //requete.setRequestHeader("X-Authenticated-Client", "anonymous");
+            /*requete.setRequestHeader("Postman-Token", "a102f0f2-1799-4bc6-b5e6-14f3a7b7c8c4");*/
+            requete.responseType = 'json';
+            requete.send();
+
+    }
+
+    function journeeCourante(nomLigue){
+
+        //Creer la requete
+            let requete = new XMLHttpRequest();
+
+        //Effectuer le callback et afficher le classement
+            requete.addEventListener("readystatechange", function () {
+              if (this.readyState === 4) {
+                return (requete.response.matches[0].season.currentMatchday);
+              }
+            });
+
+
+          //Initialiser l'url ainsi que l'envoie de la demande de donnée à l'API
+              let url = "https://api.football-data.org/v2/competitions/" + nomLigue + "/matches";
+              requete.open("GET", url);
+              requete.setRequestHeader("X-Auth-Token", "49cfbe4764bc42d5aa8748be05ab2ff1");
+              requete.responseType = 'json';
+              requete.send();
     }
 
 
