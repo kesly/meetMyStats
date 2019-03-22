@@ -445,7 +445,7 @@ function afficherResultat(nomLigue,journeeMatch = null){
                            //Création du texte de chaque cellule
                               let resultatMatch = requete2.response.matches[i].score.winner; console.log("winner : " + resultatMatch);
                               let statuMatch = requete2.response.matches[i].status; console.log("Statut : " + statuMatch);
-                              let dateMatch = requete2.response.matches[i].utcDate.split("T")[0].split("-")[1] + "/" + requete2.response.matches[i].utcDate.split("T")[0].split("-")[2];
+                              let dateMatch = requete2.response.matches[i].utcDate.split("T")[0].split("-")[2] + "/" + requete2.response.matches[i].utcDate.split("T")[0].split("-")[1];
                               let heureMatch = requete2.response.matches[i].utcDate.split("T")[1].split(":")[0] + "h" + requete2.response.matches[i].utcDate.split("T")[1].split(":")[1];
                               let equipeLocal = document.createTextNode(requete2.response.matches[i].homeTeam.name);
                               let scoreMatch = document.createTextNode(requete2.response.matches[i].score.fullTime.homeTeam + " - " + requete2.response.matches[i].score.fullTime.awayTeam);
