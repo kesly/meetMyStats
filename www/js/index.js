@@ -1,7 +1,7 @@
 
 
 
-document.addEventListener("backbutton", retour2, false);
+document.addEventListener("backbutton", retour, false);
 
 
 
@@ -70,7 +70,7 @@ let i=index-1; // page precedente
   }
 
 
-} 
+}
 
 function afficherClassement(nomLigue){
 
