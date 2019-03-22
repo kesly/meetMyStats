@@ -1,6 +1,17 @@
 
+function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-document.addEventListener("backbutton", retour2, false);
+    // device APIs are available
+
+function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", retour2, false);
+
+}
+
+
 
 function retour2()
 {
