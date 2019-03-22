@@ -5,7 +5,8 @@ document.addEventListener("backbutton", retour2, false);
 
 function retour2()
 {
-  afficherActu();
+//  afficherActu();
+  alert("toto");
 }
 
 // variables globales
