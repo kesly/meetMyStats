@@ -14,7 +14,7 @@ function retour2()
 var tabRetour= [];
 var index=-1;
 
-/*
+
 function retour()
 {
 let i=index-1; // page precedente
@@ -70,7 +70,7 @@ let i=index-1; // page precedente
   }
 
 
-} */
+} 
 
 function afficherClassement(nomLigue){
 
