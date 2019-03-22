@@ -5,20 +5,20 @@ function onLoad() {
 function onDeviceReady() {
        // Register the event listener
        alert("device ready");
-       document.addEventListener("backbutton", retour, false);
+       document.addEventListener("backbutton", retour2, false);
   }
 
 
 
 //document.addEventListener("backbutton", retour2, false);
 
-/*
+
 function retour2()
 {
-//  afficherActu();
+  afficherActu();
   alert("toto");
 }
-*/
+
 // variables globales
 var tabRetour= [];
 var index=-1;
