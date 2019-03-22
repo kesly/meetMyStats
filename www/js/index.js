@@ -1,6 +1,6 @@
 
 
-document.addEventListener("backbutton", retour, false);
+document.addEventListener("backbutton", retour2, false);
 
 
 function retour2()
