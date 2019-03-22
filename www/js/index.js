@@ -4,8 +4,8 @@ function onLoad() {
 
 function onDeviceReady() {
        // Register the event listener
-       document.addEventListener("backbutton", retour, false);
-       document.addEventListener("offline", connexionEchoue, false);
+       document.addEventListener("backbutton", retour, false); //évenement qui gère le backbutton
+       document.addEventListener("offline", connexionEchoue, false); // évènement qui gère la coupure de connexion
   }
 
 
@@ -18,18 +18,12 @@ function connexionEchoue()
 }
 
 
-function retour2()
-{
-  afficherActu();
-  alert("toto");
-}
-
 // variables globales
-var tabRetour= [];
-var index=-1;
+var tabRetour= []; //tableau qui sauvegardes les pages visités par l'utilisateur
+var index=-1; // index qui sert à savoir sur quelle page l'utilisateur se trouve
 
 
-function retour()
+function retour() // fonction gere le retour
 {
 
 let i=index-1; // page precedente
