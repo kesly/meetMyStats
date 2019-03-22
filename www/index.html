@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/myBootstrap/styles.css">
     <link rel="stylesheet" href="css/myBootstrap/Pretty-Footer.css">
     <link rel="stylesheet" href="css/myBootstrap/Team-Boxed.css">
+    <link rel="stylesheet" href="css/myBootstrap/Features-Boxed.css">
+
 </head>
 
 <body>
@@ -91,6 +93,33 @@
         </div>
     </section>
 
+    <!-- FEATURES -->
+    <div id="idFeatures" class="features-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Features </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+            </div>
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-newspaper-o icon"></i>
+                        <h3 class="name">News</h3>
+                        <p class="description">Toute l'actualitée du football européens et mondial</p><a href="#" class="learn-more"></a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-trophy icon"></i>
+                        <h3 class="name">Classements</h3>
+                        <p class="description">Classements des 5 plus grands championnats européens</p><a href="#" class="learn-more"></a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-futbol-o icon"></i>
+                        <h3 class="name">Résultat</h3>
+                        <p class="description">Résultats des 5 plus grands championnats européens</p><a href="#" class="learn-more"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- TEAM -->
     <div id="idTeam" class="team-boxed" data-aos="fade-up" data-aos-duration="500">
@@ -164,6 +193,8 @@
         let tailleDuContenu = parent.childNodes.length;
         let teamBlock = document.getElementById('idTeam');
         let tailleTeam = teamBlock.childNodes.length;
+        let featBlock = document.getElementById('idFeatures');
+        let tailleFeatures = featBlock.childNodes.length;
         /*let leConteneur = document.getElementById('containerContenu');
         let tailleCont = leConteneur.childNodes.length; console.log(tailleCont);*/
 
@@ -171,6 +202,11 @@
         //Supprimer les enfants du div de CONTENU
           for (let i=0 ; i<tailleDuContenu ; i++){
             parent.removeChild(parent.childNodes[0]);
+          }
+
+        //Supprimer le block feat
+          for (let i=0 ; i<tailleFeatures ; i++){
+            featBlock.removeChild(featBlock.childNodes[0]);
           }
 
         //Supprimer le block team
@@ -346,6 +382,9 @@
         let teamBlock = document.getElementById('idTeam');
         let tailleTeam = teamBlock.childNodes.length;
 
+        let featBlock = document.getElementById('idFeatures');
+        let tailleFeatures = featBlock.childNodes.length;
+
         let leConteneur = document.getElementById('containerContenu');
 
       //Traitements
@@ -354,6 +393,11 @@
           //Supprimer les enfants
             for (let i=0 ; i<taille ; i++){
               parent.removeChild(parent.childNodes[0]);
+            }
+
+          //Supprimer le block feat
+            for (let i=0 ; i<tailleFeatures ; i++){
+              featBlock.removeChild(featBlock.childNodes[0]);
             }
 
           //Supprimer le block team
@@ -390,7 +434,7 @@
             btn1.setAttribute("class","btn btn-primary");/*btn1.appendChild(txtBtn1);*/ btn1.appendChild(i1);
 
             let i2 = document.createElement("i");
-            i2.setAttribute("class","fa fa-angle-right²");
+            i2.setAttribute("class","fa fa-angle-right");
             //let txtBtn2 = document.createTextNode('>');
             let btn2 = document.createElement('button');
             btn2.setAttribute("id","idApres");btn2.setAttribute("class","btn btn-primary");/*btn2.appendChild(txtBtn2);*/btn2.appendChild(i2);
@@ -583,6 +627,8 @@
         let tailleDuContenu = parent.childNodes.length;
         let teamBlock = document.getElementById('idTeam');
         let tailleTeam = teamBlock.childNodes.length;
+        let featBlock = document.getElementById('idFeatures');
+        let tailleFeatures = featBlock.childNodes.length;
         /*let leConteneur = document.getElementById('containerContenu');
         let tailleCont = leConteneur.childNodes.length; console.log(tailleCont);*/
 
@@ -590,6 +636,11 @@
         //Supprimer les enfants du div de CONTENU
           for (let i=0 ; i<tailleDuContenu ; i++){
             parent.removeChild(parent.childNodes[0]);
+          }
+
+          //Supprimer le block feat
+          for (let i=0 ; i<tailleFeatures ; i++){
+            featBlock.removeChild(featBlock.childNodes[0]);
           }
 
         //Supprimer le block team
@@ -621,6 +672,10 @@
                       let containerCarte = document.createElement("div");
                       containerCarte.setAttribute("class","container-fluid");
 
+                      //Création ligne
+                        let ligneCarte = document.createElement("div");
+                        ligneCarte.setAttribute("class","row");
+
                       let nbCartes = 0;
 
                         //BOUCLE PERMETTANT L'AFFICHAGE DES ARTICLES
@@ -628,13 +683,10 @@
                           //Création de la ligne
                           console.log(requete.response.articles[i].title);
                           if(requete.response.articles[i].title.split(' - ')[0] == "Foot"){
-                              //if(nbCartes == 0){
-                                let ligneCarte = document.createElement("div");
-                                ligneCarte.setAttribute("class","row");
-                              //}
+
                             //Création de la colone
                               let colCarte = document.createElement("div");
-                              colCarte.setAttribute("class","col-md-3 col-sm-6 col-xs-12");
+                              colCarte.setAttribute("class","col-md-4 col-sm-6 col-xs-12");
 
                             //Création de la carte
                               let carte = document.createElement("div");
