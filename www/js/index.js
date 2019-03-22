@@ -28,7 +28,7 @@ function retour()
 {
   alert(index);
 let i=index-1; // page precedente
-  if ( i==0 ||i==-1) {
+  if ( i==-1) {
 
     // fermer l'appli
 
