@@ -1,5 +1,8 @@
 
 
+
+
+
 function afficherClassement(nomLigue){
   //Variables
     let parent = document.getElementById('idAffichage');
