@@ -1,6 +1,15 @@
+function onLoad() {
+       document.addEventListener("deviceready", onDeviceReady, false);
+   }
+
+function onDeviceReady() {
+       // Register the event listener
+       document.addEventListener("backbutton", retour2, false);
+  }
 
 
-document.addEventListener("backbutton", retour2, false);
+
+//document.addEventListener("backbutton", retour2, false);
 
 
 function retour2()
@@ -27,6 +36,7 @@ let i=index-1; // page precedente
 
     let action=tabRetour[i].split("-");
 
+    let ligue;
 
     switch (action[0]) {
       case "ACTUALITE":
@@ -40,7 +50,7 @@ let i=index-1; // page precedente
 
         break;
         case "CLASSEMENT":
-        let ligue=action[1];
+         ligue=action[1];
         afficherClassement(ligue);
 
         // supprimer les deux derniere pages
@@ -52,7 +62,7 @@ let i=index-1; // page precedente
           break;
 
           case "RESULTAT":
-          let ligue=action[1];
+           ligue=action[1];
           afficherResultat(ligue);
 
           // supprimer les deux derniere pages
