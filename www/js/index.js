@@ -4,7 +4,6 @@ function onLoad() {
 
 function onDeviceReady() {
        // Register the event listener
-       alert("device ready");
        document.addEventListener("backbutton", retour, false);
        document.addEventListener("offline", connexionEchoue, false);
   }
@@ -32,7 +31,7 @@ var index=-1;
 
 function retour()
 {
-  alert(index);
+
 let i=index-1; // page precedente
   if ( i==-1) {
 
