@@ -6,11 +6,17 @@ function onDeviceReady() {
        // Register the event listener
        alert("device ready");
        document.addEventListener("backbutton", retour, false);
+       document.addEventListener("offline", connexionEchoue, false);
   }
 
 
 
 //document.addEventListener("backbutton", retour2, false);
+
+function connexionEchoue()
+{
+  alert("Veuillez verifier votre connexion et reessayer.");
+}
 
 
 function retour2()
@@ -31,6 +37,7 @@ let i=index-1; // page precedente
   if ( i==-1) {
 
     // fermer l'appli
+    navigator.app.exitApp()
 
   } else {
 
