@@ -1,6 +1,11 @@
 
 
-document.addEventListener("backbutton", retour, false);
+document.addEventListener("backbutton", retour2, false);
+
+function retour2()
+{
+  afficherActu();
+}
 
 // variables globales
 var tabRetour= [];
