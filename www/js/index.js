@@ -1,15 +1,7 @@
 
-function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
 
-    // device APIs are available
 
-function onDeviceReady() {
-    // Register the event listener
-    document.addEventListener("backbutton", retour2, false);
-
-}
+document.addEventListener("backbutton", retour2, false);
 
 
 
@@ -22,6 +14,7 @@ function retour2()
 var tabRetour= [];
 var index=-1;
 
+/*
 function retour()
 {
 let i=index-1; // page precedente
@@ -77,7 +70,7 @@ let i=index-1; // page precedente
   }
 
 
-}
+} */
 
 function afficherClassement(nomLigue){
 
