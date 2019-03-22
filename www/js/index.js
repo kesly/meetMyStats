@@ -5,7 +5,7 @@ function onLoad() {
 function onDeviceReady() {
        // Register the event listener
        alert("device ready");
-       document.addEventListener("backbutton", retour2, false);
+       document.addEventListener("backbutton", retour, false);
   }
 
 
@@ -26,8 +26,9 @@ var index=-1;
 
 function retour()
 {
+  alert(index);
 let i=index-1; // page precedente
-  if ( i==0) {
+  if ( i==0 ||i==-1) {
 
     // fermer l'appli
 
