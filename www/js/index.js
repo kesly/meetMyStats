@@ -1,9 +1,74 @@
 
 
+document.addEventListener("backbutton", retour, false);
+
+// variables globales
+var tabRetour= [];
+var index=-1;
+
+function retour()
+{
+let i=index-1; // page precedente
+  if ( i==0) {
+
+    // fermer l'appli
+
+  } else {
+
+    // retourner sur page avant
+
+    let action=tabRetour[i].split("-");
 
 
+    switch (action[0]) {
+      case "ACTUALITE":
+      afficherActu();
+
+      // supprimer les deux derniere pages
+      tabRetour.pop();
+      tabRetour.pop();
+
+      index=i; // nouevelle page courante
+
+        break;
+        case "CLASSEMENT":
+        let ligue=action[1];
+        afficherClassement(ligue);
+
+        // supprimer les deux derniere pages
+        tabRetour.pop();
+        tabRetour.pop();
+
+        index=i; // nouevelle page courante
+
+          break;
+
+          case "RESULTAT":
+          let ligue=action[1];
+          afficherResultat(ligue);
+
+          // supprimer les deux derniere pages
+          tabRetour.pop();
+          tabRetour.pop();
+
+          index=i; // nouevelle page courante
+
+            break;
+      default:
+
+    }
+
+  }
+
+
+}
 
 function afficherClassement(nomLigue){
+
+  // Bouton de retour
+  tabRetour.push("CLASSEMENT-" + nomLigue);
+  index++;
+
   //Variables
     let parent = document.getElementById('idAffichage');
     let tailleDuContenu = parent.childNodes.length;
@@ -191,6 +256,11 @@ function journeeCourante(nomLigue){
 
 
 function afficherResultat(nomLigue,journeeMatch = null){
+
+  // Bouton de retour
+  tabRetour.push("RESULTAT-"+ nomLigue);
+  index++;
+
   //Variables
     let parent = document.getElementById('idAffichage');
     let taille = parent.childNodes.length;
@@ -438,6 +508,11 @@ function afficherResultat(nomLigue,journeeMatch = null){
 
 
 function afficherActu(){
+
+  // Bouton de retour
+  tabRetour.push("ACTUALITE");
+  index++;
+
   //Variables
     let parent = document.getElementById('idAffichage');
     let tailleDuContenu = parent.childNodes.length;
